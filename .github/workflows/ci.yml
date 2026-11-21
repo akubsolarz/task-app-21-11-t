@@ -82,14 +82,14 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}" |
             docker login ghcr.io -u ${{ github.actor }} --password-stdin
       - run: |
-          OWNER="${{ github.repository_owner }}"
-          IMAGE="ghcr.io/${OWNER,,}/${{ matrix.service }}:${{ github.sha }}"
+          IMAGE="ghcr.io/${GITHUB REPOSITORY_OWNER,, }/${{ matrix.service }}"
+          IMAGE="$IMAGE:${{ github.sha }}"
           SOURCE="https://github.com/${{ github.repository }}"
           docker build \
             --label "org.opencontainers.image.source=$SOURCE" \
             -t "$IMAGE" "services/${{ matrix.service }}"
           docker push "$IMAGE"
-          
+
   deploy:
     needs: [run_tests, generate_api_docs]
     if: github.event.pull_request.merged == true
