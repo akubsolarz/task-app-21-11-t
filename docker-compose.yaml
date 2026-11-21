@@ -1,15 +1,13 @@
 services:
   web:
-    build: ./services/task-api
+    build: ./services/tasks-api
     ports:
       - "5000:5000"
     environment:
       POSTGRES_PASSWORD: example
       POSTGRES_HOST: db
       POSTGRES_USER: example_user
-    db:
-      image: postgres:18
-      environment:
-        POSTGRES_PASSWORD: example
-
-    
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_PASSWORD: example
