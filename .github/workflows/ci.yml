@@ -82,8 +82,8 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}" |
             docker login ghcr.io -u ${{ github.actor }} --password-stdin
       - run: |
-          IMAGE="ghcr.io/${GITHUB REPOSITORY_OWNER,, }/${{ matrix.service }}"
-          IMAGE="$IMAGE:${{ github.sha }}"
+          OWNER="${{ github.repository_owner }}"
+          IMAGE="ghcr.io/${OWNER,,}/${{ matrix.service }}:${{ github.sha }}"
           SOURCE="https://github.com/${{ github.repository }}"
           docker build \
             --label "org.opencontainers.image.source=$SOURCE" \
