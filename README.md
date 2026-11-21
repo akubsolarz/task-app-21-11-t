@@ -122,4 +122,4 @@ Zadania:
 - Ochrona `main` i skanowanie obrazów: ruleset z wymaganymi pull requestami i checkami, job `scan_images` z Trivy, przypinanie akcji po commicie. Dokumentacja: [About rulesets](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets), [Trivy Action README](https://github.com/aquasecurity/trivy-action#readme).
 - Porządek w zależnościach i repo: Dependabot, obraz bazowy przypięty po digeście, `CODEOWNERS`, szablon pull requesta, liniowa historia. Dokumentacja: [Dependabot options reference](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference), [About code owners](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).
 - Historia gita: branche, cherry-pick, squash merge i rebase. Dokumentacja: [Git Branching - Rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing).
-- Monitoring: metryki z aplikacji, Prometheus, Grafana. Dokumentacja: [Prometheus overview](https://prometheus.io/docs/introduction/overview/).
+
