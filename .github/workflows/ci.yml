@@ -57,7 +57,7 @@ jobs:
           name: ${{matrix.service}}-api-docs
           path: services/${{matrix.service}}/apidocs
 
-  build_docs:
+  build_images:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -65,9 +65,9 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - run: docker build -t ${{ matrix.service }} ./services/${{ matrix.service }}
-    
+
   publish_img:
-    needs: build_docs
+    needs: build_images
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     permissions:
